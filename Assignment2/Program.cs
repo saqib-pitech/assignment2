@@ -49,6 +49,53 @@ namespace Assignment2
             }
         }
     }
+
+    class PassCheck
+    {
+        private static string pass;
+        static bool Letter()
+        {
+            for (int i = 0; i < pass.Length; i++)
+            {
+                if (char.IsLetter(pass[i])) return true;
+            }
+            return false;
+        }
+        static bool Digit()
+        {
+            for (int i = 0; i < pass.Length; i++)
+            {
+                if (char.IsDigit(pass[i])) return true;
+            }
+            return false;
+        }
+        static bool Symbol()
+        {
+            for (int i = 0; i < pass.Length; i++)
+            {
+                if (char.IsSymbol(pass[i])) return true;
+            }
+            return false;
+        }
+        static bool Caps()
+        {
+            for (int i = 0; i < pass.Length; i++)
+            {
+                if (char.IsUpper(pass[i])) return true;
+            }
+            return false;
+        }  // atleast one letter caps
+        static bool MinLength()
+        {
+            return pass.Length >= 6;
+        }
+        public static bool Check(string p_pass)
+        {
+            pass = p_pass;
+            return Letter() || Digit() || Symbol() || Caps() || MinLength();
+        }
+    }
+
     class Program
     {
         static void Swap<T>(ref T a, ref T b)
@@ -58,6 +105,21 @@ namespace Assignment2
             a = b;
             b = t;
         }
+        #region minMax
+
+        static int[] MinMax(int[] a)
+        {
+            int min = 9999999, max = -1;
+            for (int i = 0; i < a.Length; i++)
+            {
+                if (a[i] < min) min = a[i];
+                if (a[i] > max) max = a[i];
+            }
+            int[] ret = { min, max };
+            return ret;
+        } 
+        #endregion
+
         static void Main(string[] args)
         {
             JaggedArray.Test();
@@ -78,6 +140,8 @@ namespace Assignment2
                 Console.WriteLine($"{a},{b}");
             #endregion
 
+            #region Indexer
+
             IndexerDemo ind = new IndexerDemo();
             ind[0] = "apple";
             ind[1] = "mango";
@@ -86,6 +150,20 @@ namespace Assignment2
 
             Console.WriteLine(ind[0]);
             Console.WriteLine(ind[2]);
+
+            #endregion
+
+            int[] t = { 9, 1, 4, 5, 22, 3, 45 };
+            Console.WriteLine( $"Min: {MinMax(t)[0]}, Max: {MinMax(t)[1]}");
+
+            if (PassCheck.Check("P@sswo4d"))
+            {
+                Console.WriteLine("pass ok");
+            }
+            else
+            {
+                Console.WriteLine("not ok");
+            }
 
             Console.Read();
         }

@@ -1,0 +1,6 @@
+C:\Users\Mohd.Saqib\Training\Assignment2\Assignment2\bin\Debug\Assignment2.exe.config
+C:\Users\Mohd.Saqib\Training\Assignment2\Assignment2\bin\Debug\Assignment2.exe
+C:\Users\Mohd.Saqib\Training\Assignment2\Assignment2\bin\Debug\Assignment2.pdb
+C:\Users\Mohd.Saqib\Training\Assignment2\Assignment2\obj\Debug\Assignment2.csprojAssemblyReference.cache
+C:\Users\Mohd.Saqib\Training\Assignment2\Assignment2\obj\Debug\Assignment2.exe
+C:\Users\Mohd.Saqib\Training\Assignment2\Assignment2\obj\Debug\Assignment2.pdb

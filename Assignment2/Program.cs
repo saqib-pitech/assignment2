@@ -10,6 +10,7 @@ namespace Assignment2
     {
         static int[][] jaggedArray = new int[][]
         {
+
             new int[] { 1,2,3,4,5 },
             new int[] { 6,7,8,9 },
             new int[] { 10,11 }
@@ -32,8 +33,22 @@ namespace Assignment2
         }
     }
 
-    
 
+    class IndexerDemo
+    {
+        private string[] fruits = new string[10];
+        public string this[int i]
+        {
+            get
+            {
+                return fruits[i];
+            }
+            set
+            {
+                fruits[i] = value;
+            }
+        }
+    }
     class Program
     {
         static void Swap<T>(ref T a, ref T b)
@@ -62,7 +77,16 @@ namespace Assignment2
                 Swap<int>(ref a, ref b);
                 Console.WriteLine($"{a},{b}");
             #endregion
-            
+
+            IndexerDemo ind = new IndexerDemo();
+            ind[0] = "apple";
+            ind[1] = "mango";
+            ind[2] = "grapes";
+            ind[3] = "avocado";
+
+            Console.WriteLine(ind[0]);
+            Console.WriteLine(ind[2]);
+
             Console.Read();
         }
     }

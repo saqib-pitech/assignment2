@@ -17,7 +17,7 @@ namespace Assignment2
         /*static int[2][,] jaggedArray2 = new int[2][,]
         {
             new int[,] {{1,2},{3,4}},
-            new int[,] {{5,6},{7,8}}
+            new int[,] {{5,6},{7,8}} lsdjkflsa 
         };*/
 
         public static void Test()

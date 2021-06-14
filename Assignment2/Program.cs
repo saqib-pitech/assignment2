@@ -106,7 +106,40 @@ namespace Assignment2
             b = t;
         }
         #region minMax
-
+        struct Two
+        {
+            public int a, b;
+        }
+        class TwoC
+        {
+            public int a, b;
+        }
+        static Two MinMaxS(int[] a)
+        {
+            int min = 9999999, max = -1;
+            for (int i = 0; i < a.Length; i++)
+            {
+                if (a[i] < min) min = a[i];
+                if (a[i] > max) max = a[i];
+            }
+            Two t;
+            t.a = min;
+            t.b=max;
+            return t;
+        } 
+        static TwoC MinMaxC(int[] a)
+        {
+            int min = 9999999, max = -1;
+            for (int i = 0; i < a.Length; i++)
+            {
+                if (a[i] < min) min = a[i];
+                if (a[i] > max) max = a[i];
+            }
+            TwoC t = new TwoC();
+            t.a = min;
+            t.b = max;
+            return t;
+        } 
         static int[] MinMax(int[] a)
         {
             int min = 9999999, max = -1;
@@ -117,6 +150,19 @@ namespace Assignment2
             }
             int[] ret = { min, max };
             return ret;
+        } 
+        static List<int> MinMaxColl(int[] a)
+        {
+            int min = 9999999, max = -1;
+            for (int i = 0; i < a.Length; i++)
+            {
+                if (a[i] < min) min = a[i];
+                if (a[i] > max) max = a[i];
+            }
+            List<int> t = new List<int>();
+            t.Add(min);
+            t.Add(max);
+            return t;
         } 
         #endregion
 
@@ -154,7 +200,10 @@ namespace Assignment2
             #endregion
 
             int[] t = { 9, 1, 4, 5, 22, 3, 45 };
-            Console.WriteLine( $"Min: {MinMax(t)[0]}, Max: {MinMax(t)[1]}");
+            Console.WriteLine( $"Min: {MinMax(t)[0]}, Max: {MinMax(t)[1]}");  
+            Console.WriteLine( $"Min: {MinMaxS(t).a}, Max: {MinMaxS(t).b}");
+            Console.WriteLine( $"Min: {MinMaxC(t).a}, Max: {MinMaxC(t).b}");
+            Console.WriteLine( $"Min: {MinMaxColl(t)[0]}, Max: {MinMaxColl(t)[1]}");
 
             if (PassCheck.Check("P@sswo4d"))
             {
